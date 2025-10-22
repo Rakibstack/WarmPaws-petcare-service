@@ -30,10 +30,10 @@ export default function Heroslider() {
         <img src="https://i.ibb.co.com/m3Xw9ZN/8420009.jpg" alt="slide 3" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://i.ibb.co.com/cczkKDyT/4670307.jpg" alt="slide 4" />
+        <img src="https://i.ibb.co.com/xtsL0dGX/Screenshot-2025-10-22-224103.png" alt="slide 4" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="https://i.ibb.co.com/bgFshRTp/3865689.jpg" alt="slide 5" />
+        <img src="https://i.ibb.co.com/WWSDS0C4/Screenshot-2025-10-22-223839.png" alt="slide 5" />
       </SwiperSlide>
     </Swiper>
   );
