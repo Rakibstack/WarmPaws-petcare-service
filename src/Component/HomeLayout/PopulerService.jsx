@@ -3,29 +3,31 @@ import { useLoaderData } from 'react-router';
 
 const PopulerService = () => {
     const datas = useLoaderData();
+    
 
     return (
         <div className='py-5'>
 
-              <h2 className='text-center py-8 text-4xl font-extrabold text-[#2D6A4F]'>Popular Winter Care Services.</h2>
+              <h2 className='text-center py-8 text-4xl font-extrabold text-[#2D6A4F] '>Popular Winter Care Services.</h2>
             <div className='grid gap-5 lg:grid-cols-4 py-6'>
                 {
                     datas.map(data => (
-                        <div key={data.serviceId} className="card bg-base-200 full shadow-md">
-                            <figure>
-                                <img
-                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                        <div key={data.serviceId} className="card hover:shadow-2xl  hover:scale-106 transition duration-400 ease-in-out h-96 bg-base-100 full shadow-md">
+                            <figure className='p-3'>
+                                <img className='rounded-lg '
+                                    src={data.image}
                                     alt="Shoes" />
                             </figure>
-                            <div className="card-body">
-                                <h2 className="card-title">
-                                    Card Title
-                                    <div className="badge badge-secondary">NEW</div>
+                            <div className="card-body space-y-3">
+                                <h2 className="card-title text-[#2D6A4F]">
+                                   {data.serviceName}
                                 </h2>
-                                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                                <div className="card-actions justify-end">
-                                    <div className="badge badge-outline">Fashion</div>
-                                    <div className="badge badge-outline">Products</div>
+                                <div className="card-actions ">
+                                    <div className="badge badge-outline text-[#2D6A4F]"> Price {data.price}</div>
+                                    <div className="badge badge-outline text-[#2D6A4F]">Rating  {data.rating}</div>
+                                </div>
+                                <div className='px-4 py-2 rounded-md bg-[#2D6A4F] text-white w-[120px]'>
+                                    <button>View Details</button>
                                 </div>
                             </div>
                         </div>
