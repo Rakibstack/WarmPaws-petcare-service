@@ -1,0 +1,100 @@
+
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Thermal Blanket Customization",
+    "providerName": "WarmTails Studio",
+    "providerEmail": "contact@warmtails.com",
+    "price": 28,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Personalized thermal blankets designed for pets to ensure maximum warmth during chilly nights.",
+    "image": "https://i.postimg.cc/3NwLxVZf/thermal-blanket.png",
+    "category": "Accessories"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Snow-Proof Jacket Design",
+    "providerName": "PawTrend Workshop",
+    "providerEmail": "design@pawtrend.com",
+    "price": 35,
+    "rating": 4.7,
+    "slotsAvailable": 2,
+    "description": "Lightweight and waterproof jackets tailored to protect pets from snow and wind.",
+    "image": "https://i.postimg.cc/FRNnq8Kn/snow-proof-jacket.png",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Winter Spa & Coat Hydration",
+    "providerName": "FurryBliss Spa",
+    "providerEmail": "care@furrybliss.com",
+    "price": 40,
+    "rating": 5.0,
+    "slotsAvailable": 3,
+    "description": "Full-body spa with hydrating oil treatment to keep your pet’s coat shiny and healthy during dry winter months.",
+    "image": "https://i.postimg.cc/1zQm5smn/winter-spa.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Cozy Bed Refurbishment",
+    "providerName": "PetNest Decor",
+    "providerEmail": "support@petnest.com",
+    "price": 32,
+    "rating": 4.6,
+    "slotsAvailable": 4,
+    "description": "Upgrade your pet’s sleeping area with warm bedding, plush cushions, and heated pads for ultimate comfort.",
+    "image": "https://i.postimg.cc/2j7Q3FHz/cozy-bed.png",
+    "category": "Comfort"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Winter Walking Booties",
+    "providerName": "SnowPaw Gear",
+    "providerEmail": "info@snowpawgear.com",
+    "price": 22,
+    "rating": 4.8,
+    "slotsAvailable": 6,
+    "description": "Protect your pet’s paws with non-slip, water-resistant winter booties for icy sidewalks.",
+    "image": "https://i.postimg.cc/jqPGmJ3C/winter-booties.png",
+    "category": "Accessories"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Heated Kennel Setup",
+    "providerName": "WarmHome Pets",
+    "providerEmail": "services@warmhome.com",
+    "price": 50,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Installation of temperature-controlled kennels with insulated walls and safe heating systems.",
+    "image": "https://i.postimg.cc/L8WPrW8z/heated-kennel.png",
+    "category": "Housing"
+  },
+  {
+    "serviceId": 7,
+    "serviceName": "Winter Nutrition Plan",
+    "providerName": "HealthyPaws Clinic",
+    "providerEmail": "diet@healthypaws.com",
+    "price": 27,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Custom winter diet plan to boost your pet’s immunity and maintain healthy weight through the cold season.",
+    "image": "https://i.postimg.cc/d0MXtXps/winter-nutrition.png",
+    "category": "Health"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Cold Weather Training & Exercise",
+    "providerName": "PawFit Trainers",
+    "providerEmail": "train@pawfit.com",
+    "price": 33,
+    "rating": 4.8,
+    "slotsAvailable": 4,
+    "description": "Safe and fun indoor training sessions to keep pets active even in harsh winter conditions.",
+    "image": "https://i.postimg.cc/4NVFxQzL/winter-training.png",
+    "category": "Fitness"
+  }
+ 
+]
