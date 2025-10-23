@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { use } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import { MdOutlinePets } from 'react-icons/md';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
+import { Authcontext } from '../Authprovider/Authprovider';
 
 const Navber = () => {
+    const {user,Logout} = use(Authcontext);
 
+    const Handlelogout = () => {
+       Logout();
+
+    }
+    
     return (
         <div>
 
@@ -32,15 +39,17 @@ const Navber = () => {
                     <ul className="menu menu-horizontal mr-5">
                         
                          <nav className='flex gap-6 text-[#2D6A4F] text-[1.1rem] font-medium'>
-                                <NavLink>Home</NavLink>
-                                <NavLink>Services</NavLink>
+                                <NavLink to='/'>Home</NavLink>
+                                <NavLink >Services</NavLink>
                                 <NavLink> My Profile</NavLink>
                             </nav>
                     </ul>
                 </div>
                 <div className='flex gap-3 justify-center items-center'>
                     <FaUserCircle  size={38} color='#2D6A4F'/>
-                    <a className="btn bg-[#2D6A4F] text-white hover:bg-[#22543D]   rounded-xl btn-outline"> Log in</a>
+                   {
+                    user ?  <a onClick={Handlelogout} className="btn bg-[#2D6A4F] text-white hover:bg-[#22543D]   rounded-xl btn-outline"> Log Out</a> :  <Link to='/auth/login' className="btn bg-[#2D6A4F] text-white hover:bg-[#22543D]   rounded-xl btn-outline"> Log in</Link>
+                   }
                 </div>
                     
                 </div>
