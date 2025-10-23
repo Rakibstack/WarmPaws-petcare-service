@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const PopulerService = () => {
     const datas = useLoaderData();
@@ -26,8 +26,8 @@ const PopulerService = () => {
                                     <div className="badge badge-outline text-[#2D6A4F]"> Price {data.price}</div>
                                     <div className="badge badge-outline text-[#2D6A4F]">Rating  {data.rating}</div>
                                 </div>
-                                <div className='px-4 py-2 rounded-md bg-[#2D6A4F] text-white w-[120px]'>
-                                    <button>View Details</button>
+                                <div >
+                                    <Link  to={`/servicedetails/${data.serviceId}`} className='px-4 py-2 rounded-md bg-[#2D6A4F] text-white w-[120px]'>View Details</Link>
                                 </div>
                             </div>
                         </div>
