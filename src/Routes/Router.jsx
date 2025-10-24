@@ -5,6 +5,7 @@ import Servicedetails from "../Component/HomeLayout/Servicedetails";
 import Authenticationlayout from "../Layout/Authenticationlayout";
 import Login from "../Component/Auth/Login";
 import Register from "../Component/Auth/Register";
+import Privateroute from "../Component/PrivateRoute/Privateroute";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/servicedetails/:id',
-                element: <Servicedetails></Servicedetails>,
+                element: <Privateroute>
+                     <Servicedetails></Servicedetails>
+                </Privateroute>,
                 loader: () => fetch('/AllServicedata.json')
             }
         ],

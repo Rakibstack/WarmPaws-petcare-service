@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { Authcontext } from '../Authprovider/Authprovider';
 import { use, useState } from 'react';
 import { GoogleAuthProvider } from 'firebase/auth';
@@ -10,12 +10,14 @@ const Register = () => {
     const { createuser,signinwithpopup } = use(Authcontext);
     const [error, seterror] = useState();
     const navigate = useNavigate();
+    const location = useLocation();
+    
 
     const Handlegoogle = () => {
         signinwithpopup(googleprovider)
         .then(result => {
-            navigate('/')
-            console.log(result);
+         navigate(`${location.state ? location.state : '/'}`) 
+        console.log(result);
             
         }).catch(error => {
             seterror(error)
@@ -38,8 +40,8 @@ const Register = () => {
         }
         createuser(email, password)
             .then(result => {
-                const user = result.user;
-                navigate('/')
+              const user = result.user;
+            navigate(`${location.state ? location.state : '/'}`) 
             }).catch(error => {
                 const errormessage = error.code;
                 seterror(errormessage);

@@ -25,7 +25,7 @@ const Navber = () => {
                             tabIndex="-1"
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <nav className='flex gap-2'>
-                                <NavLink>Home</NavLink>
+                                <NavLink to='/'>Home</NavLink>
                                 <NavLink>Services</NavLink>
                                 <NavLink> My Profile</NavLink>
                             </nav>
@@ -40,7 +40,7 @@ const Navber = () => {
                         
                          <nav className='flex gap-6 text-[#2D6A4F] text-[1.1rem] font-medium'>
                                 <NavLink to='/'>Home</NavLink>
-                                <NavLink >Services</NavLink>
+                                <NavLink to='/' >Services</NavLink>
                                 <NavLink> My Profile</NavLink>
                             </nav>
                     </ul>

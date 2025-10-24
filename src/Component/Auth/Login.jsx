@@ -1,5 +1,5 @@
 import React, { use, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { Authcontext } from '../Authprovider/Authprovider';
 import { GoogleAuthProvider } from 'firebase/auth';
  
@@ -8,12 +8,14 @@ const provider = new GoogleAuthProvider();
 const Login = () => {
     const {loginuser,Loginpopup} = use(Authcontext);
     const [error,seterror] = useState();
+    const location = useLocation();
+    const navigate = useNavigate();  
 
      const Handlegoogle = () => {
         Loginpopup(provider)
         .then(result => {
             console.log(result);
-            
+            navigate(`${location.state ? location.state : '/'}`)           
         })
         .caches(error => {
             seterror(error);
@@ -29,6 +31,7 @@ const Login = () => {
      loginuser(email,password)
      .then(result => {
       console.log(result);
+       navigate(`${location.state ? location.state : '/'}`) 
       
      }).catch(error => {
       const errormessage = error.code;
@@ -38,8 +41,8 @@ const Login = () => {
     }
 
     return (
-        <div className='mt-10'>
-            <div className="card bg-base-100 w-full mx-auto max-w-md  shadow-2xl">
+        <div>
+            <div className="card bg-base-100 w-full mx-auto max-w-sm  shadow-2xl">
                 <form onSubmit={Handlelogin} className="card-body">
                     <h2 className='text-center font-bold text-2xl'>Login form</h2>
                     <fieldset className="fieldset">
@@ -56,7 +59,7 @@ const Login = () => {
                             Sign in with Google
                         </button>
                         </div>
-                        <p className='mt-2 font-medium text-[0.9rem] text-gray-500'>New To Here please? <Link to='/auth/register' className='text-blue-500 font-bold'>Register</Link> </p>
+                        <p className='mt-2 font-medium text-[0.9rem] text-gray-500'>New To Here please? <Link state={location.state} to='/auth/register' className='text-blue-500 font-bold'>Register</Link> </p>
                     </fieldset>
                 </form>
             </div>
