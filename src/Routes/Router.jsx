@@ -6,6 +6,7 @@ import Authenticationlayout from "../Layout/Authenticationlayout";
 import Login from "../Component/Auth/Login";
 import Register from "../Component/Auth/Register";
 import Privateroute from "../Component/PrivateRoute/Privateroute";
+import Forgotpassword from "../Component/Auth/Forgotpassword";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: '/auth/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/auth/forgotpassword',
+                element: <Forgotpassword></Forgotpassword>
             }
         ]
     }

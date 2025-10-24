@@ -1,7 +1,8 @@
 import { Link, useLocation, useNavigate } from 'react-router';
 import { Authcontext } from '../Authprovider/Authprovider';
-import { use, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const googleprovider = new GoogleAuthProvider();
 
@@ -9,9 +10,10 @@ const Register = () => {
 
     const { createuser,signinwithpopup } = use(Authcontext);
     const [error, seterror] = useState();
+    const [showpass, setshowpass] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
-    
+
 
     const Handlegoogle = () => {
         signinwithpopup(googleprovider)
@@ -33,7 +35,10 @@ const Register = () => {
         const password = form.password.value;
         const passwordpattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/
           
-        seterror('');
+       useEffect(()=> {
+         seterror('');
+       },[])
+       
         if (!passwordpattern.test(password)) {
             seterror('Password Didnot Match.')
             return
@@ -45,9 +50,12 @@ const Register = () => {
             }).catch(error => {
                 const errormessage = error.code;
                 seterror(errormessage);
-
             })
 
+    }
+    const Handleshowpass = (e) => {
+      e.preventDefault();
+       setshowpass(!showpass);   
     }
 
 
@@ -67,8 +75,14 @@ const Register = () => {
                         <label className="label">Email</label>
                         <input type="email" required name='email' className="input w-full bg-base-300" placeholder="Enter Your Email" />
                         {/* password */}
-                        <label className="label">Password</label>
-                        <input type="password" required name='password' className="input w-full bg-base-300" placeholder="Enter Your Password" />
+                       <div className='relative'>
+                         <label className="label">Password</label>
+                        <input type={showpass ? 'text' : 'password'}
+                         required name='password'
+                          className="input w-full bg-base-300" placeholder="Enter Your Password" />
+                        <button onClick={Handleshowpass} className='absolute   top-7 right-3'>{showpass ? <FaEyeSlash size={21}/> : <FaEye size={22} />}</button>
+                       </div>
+
 
                         {error && <p className='text-red-500 mt-1 font-medium'>{error}</p>}
                         {/* Google */}
