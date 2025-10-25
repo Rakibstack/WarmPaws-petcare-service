@@ -62,11 +62,12 @@ const Authprovider = ({children}) => {
    user,
    setuser,
    loading,
-   updateuser
+   updateuser,
+   setloading
  }
-    return <Authcontext value={authinfo}>
+    return <Authcontext.Provider value={authinfo}>
       {children}
-    </Authcontext>
+    </Authcontext.Provider>
 };
 
 export default Authprovider;

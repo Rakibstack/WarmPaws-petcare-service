@@ -46,7 +46,7 @@ const Navber = () => {
                     </div>
                     <div className='flex gap-3 justify-center items-center'>
 
-                        <div className='relative group'>
+                        <Link to='/myprofile' className='relative group'>
                             <img className='w-15 h-15 rounded-full' src={`${user ? user.photoURL : usericon}`}
                             />
                             {user && (
@@ -54,7 +54,7 @@ const Navber = () => {
                                     {user.displayName}
                                 </span>
                             )}
-                        </div>
+                        </Link>
                         {
                             user ? <a onClick={Handlelogout} className="btn bg-[#2D6A4F] text-white hover:bg-[#22543D]   rounded-xl btn-outline"> Log Out</a> : <Link to='/auth/login' className="btn bg-[#2D6A4F] text-white hover:bg-[#22543D]   rounded-xl btn-outline"> Log in</Link>
                         }
