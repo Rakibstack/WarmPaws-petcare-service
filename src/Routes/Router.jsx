@@ -8,6 +8,7 @@ import Register from "../Component/Auth/Register";
 import Privateroute from "../Component/PrivateRoute/Privateroute";
 import Forgotpassword from "../Component/Auth/Forgotpassword";
 import Myprofile from "../Component/Myprofile/Myprofile";
+import Loading from "../Component/HomeLayout/Loading";
 
 const router = createBrowserRouter([
     {
@@ -17,14 +18,16 @@ const router = createBrowserRouter([
             {
                 path: '/', 
                 element: <Home></Home>,
-                loader: () => fetch('/AllServicedata.json')
+                loader: () => fetch('/AllServicedata.json'),
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: '/servicedetails/:id',
                 element: <Privateroute>
                      <Servicedetails></Servicedetails>
                 </Privateroute>,
-                loader: () => fetch('/AllServicedata.json')
+                loader: () => fetch('/AllServicedata.json'),
+                 hydrateFallbackElement: <Loading></Loading>
             }
         ],
     },
