@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { Authcontext } from '../Authprovider/Authprovider';
 import { GoogleAuthProvider,  } from 'firebase/auth';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import toast, { Toaster } from 'react-hot-toast';
  
 const provider = new GoogleAuthProvider();
 
@@ -78,7 +77,7 @@ const Login = () => {
                          <button onClick={Handleshowpass} className='absolute   top-7 right-3'>{showpass ? <FaEyeSlash size={21}/> : <FaEye size={22} />}</button>
                        </div>
 
-                        <div>  <Toaster />
+                        <div> 
                         <a onClick={Handleforgotpass} className="link link-hover">Forgot password?</a></div>
                         {error && <p className='text-red-500 font-medium mt-2'>{error}</p>}
                          <div>

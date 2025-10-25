@@ -1,12 +1,11 @@
 import { sendPasswordResetEmail } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation,  } from 'react-router';
 import { auth } from '../../firebase/firebase.config';
 
 const Forgotpassword = () => {
 
     const location = useLocation();
-    const navigate = useNavigate();
     const [email,setemail] = useState('');
     const [error,seterror] = useState();
 
@@ -26,8 +25,7 @@ const Forgotpassword = () => {
       .catch(() => {
        seterror('Please check the email address.');
 
-      })
-     
+      })  
 
      }
     return (

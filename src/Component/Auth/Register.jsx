@@ -8,7 +8,7 @@ const googleprovider = new GoogleAuthProvider();
 
 const Register = () => {
 
-    const { createuser,signinwithpopup } = use(Authcontext);
+    const { createuser,signinwithpopup,updateuser,setuser } = use(Authcontext);
     const [error, seterror] = useState();
     const [showpass, setshowpass] = useState(false);
     const navigate = useNavigate();
@@ -25,6 +25,9 @@ const Register = () => {
             seterror(error)
         })
     }
+     useEffect(()=> {
+         seterror('');
+       },[])
 
     const Handleregister = (e) => {
         e.preventDefault();
@@ -34,18 +37,24 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const passwordpattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/
-          
-       useEffect(()=> {
-         seterror('');
-       },[])
        
         if (!passwordpattern.test(password)) {
             seterror('Password Didnot Match.')
             return
         }
+         
         createuser(email, password)
             .then(result => {
               const user = result.user;
+              updateuser({
+              displayName : name ,photoURL : photo, 
+              }).then(()=> {
+               setuser({...user,displayName : name ,photoURL : photo, });
+
+              }).catch(() => {
+                setuser(user)
+              })
+             
             navigate(`${location.state ? location.state : '/'}`) 
             }).catch(error => {
                 const errormessage = error.code;

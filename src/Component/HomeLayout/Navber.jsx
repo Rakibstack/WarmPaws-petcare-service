@@ -1,17 +1,16 @@
 import React, { use } from 'react';
-import { FaUserCircle } from 'react-icons/fa';
 import { MdOutlinePets } from 'react-icons/md';
 import { Link, NavLink } from 'react-router';
 import { Authcontext } from '../Authprovider/Authprovider';
-
+import usericon from '../../assets/user.png'
 const Navber = () => {
-    const {user,Logout} = use(Authcontext);
+    const { user, Logout } = use(Authcontext);
 
     const Handlelogout = () => {
-       Logout();
+        Logout();
 
     }
-    
+
     return (
         <div>
 
@@ -27,31 +26,40 @@ const Navber = () => {
                             <nav className='flex gap-2'>
                                 <NavLink to='/'>Home</NavLink>
                                 <NavLink>Services</NavLink>
-                                <NavLink> My Profile</NavLink>
+                                <NavLink to='/myprofile'> My Profile</NavLink>
                             </nav>
                         </ul>
                     </div>
                     <a className="flex text-[#2D6A4F] justify-center items-center gap-2 text-2xl font-bold"><MdOutlinePets /> WarmPaws </a>
                 </div>
-                
+
                 <div className="navbar-end">
                     <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal mr-5">
-                        
-                         <nav className='flex gap-6 text-[#2D6A4F] text-[1.1rem] font-medium'>
+                        <ul className="menu menu-horizontal mr-5">
+
+                            <nav className='flex gap-6 text-[#2D6A4F] text-[1.1rem] font-medium'>
                                 <NavLink to='/'>Home</NavLink>
                                 <NavLink to='/' >Services</NavLink>
-                                <NavLink> My Profile</NavLink>
+                                <NavLink to='/myprofile'> My Profile</NavLink>
                             </nav>
-                    </ul>
-                </div>
-                <div className='flex gap-3 justify-center items-center'>
-                    <FaUserCircle  size={38} color='#2D6A4F'/>
-                   {
-                    user ?  <a onClick={Handlelogout} className="btn bg-[#2D6A4F] text-white hover:bg-[#22543D]   rounded-xl btn-outline"> Log Out</a> :  <Link to='/auth/login' className="btn bg-[#2D6A4F] text-white hover:bg-[#22543D]   rounded-xl btn-outline"> Log in</Link>
-                   }
-                </div>
-                    
+                        </ul>
+                    </div>
+                    <div className='flex gap-3 justify-center items-center'>
+
+                        <div className='relative group'>
+                            <img className='w-15 h-15 rounded-full' src={`${user ? user.photoURL : usericon}`}
+                            />
+                            {user && (
+                                <span className="absolute left-1/2  -translate-x-1/2  text-sm bg-[#2D6A4F] text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
+                                    {user.displayName}
+                                </span>
+                            )}
+                        </div>
+                        {
+                            user ? <a onClick={Handlelogout} className="btn bg-[#2D6A4F] text-white hover:bg-[#22543D]   rounded-xl btn-outline"> Log Out</a> : <Link to='/auth/login' className="btn bg-[#2D6A4F] text-white hover:bg-[#22543D]   rounded-xl btn-outline"> Log in</Link>
+                        }
+                    </div>
+
                 </div>
             </div>
         </div>
