@@ -23,9 +23,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/servicedetails/:id',
-                element: <Privateroute>
-                     <Servicedetails></Servicedetails>
-                </Privateroute>,
+                element: 
+                     <Servicedetails></Servicedetails>,
                 loader: () => fetch('/AllServicedata.json'),
                  hydrateFallbackElement: <Loading></Loading>
             }

@@ -1,23 +1,111 @@
+🐾 WarmPaws – Pet Care in Winter
 
- Project Name : WarmPaws – Pet Care in Winter.
+WarmPaws is a modern pet care service platform designed to help pet owners keep their furry friends safe, warm, and healthy during the winter season.
+It offers professional services, easy booking, and a smooth user experience.
 
- purpose:
-To provide a comfortable and safe winter experience for pets by offering essential care tips, cozy products, and professional winter pet care services — helping pet owners keep their furry friends warm, healthy, and happy during the cold season.
+🌐 Live Preview
 
-Key Features of WarmPaws:
-Winter Pet Care Services – Browse different winter services (like coat fitting, grooming, health checkup).
+🔗 Live Link : http://localhost:5173
 
-Service Booking System – Users can book a service slot and see availability.
+📌 Project Purpose
 
-User Authentication – Login, Register, Google Sign-in, and Password Reset (Firebase Auth).
+The main goal of WarmPaws is to provide a comfortable and safe winter experience for pets by offering:
 
-Responsive Design – Fully mobile and desktop-friendly UI.
+Essential winter care tips
 
-Dynamic Service Details Page – Each service has its own detailed info page with price, rating, and description.
+Cozy pet services
 
-Add / Update Profile – Users can view and update their personal info (name, photo, email).
+Professional grooming & health checkups
 
-Private Routes – Some pages (like booking or profile) require login access.
+Easy online booking system
 
- npm packages:
- React.js, React Router, Tailwindcss, DaisyUI, Reacticon, React-Hot-Toast, and Swiper,
+This platform helps pet owners ensure their pets stay warm, healthy, and happy during cold weather.
+
+✨ Key Features
+🐶 Winter Pet Care Services
+
+Browse multiple winter services
+
+Coat fitting, grooming & health checkups
+
+Detailed service descriptions
+
+📅 Service Booking System
+
+Book services easily
+
+Check availability
+
+Smooth booking experience
+
+🔐 User Authentication
+
+Login & Register
+
+Google Sign-in
+
+Password Reset
+
+Firebase Authentication
+
+📱 Responsive Design
+
+Mobile-friendly
+
+Tablet & Desktop optimized
+
+Clean and modern UI
+
+📄 Dynamic Service Details
+
+Individual service pages
+
+Price, rating & description
+
+Dynamic routing
+
+👤 User Profile Management
+
+View & update profile
+
+Change name, photo & email
+
+🔒 Private Routes
+
+Protected pages
+
+Booking & profile accessible only after login
+
+🛠️ Technologies & Packages Used
+🚀 Frontend
+
+React.js
+
+React Router
+
+Tailwind CSS
+
+DaisyUI
+
+📦 Additional Libraries
+
+React Icons
+
+React Hot Toast
+
+Swiper.js
+
+🔐 Authentication
+
+Firebase Authentication
+
+
+🤝 Contribution
+
+Contributions, issues, and feature requests are welcome!
+Feel free to fork this project and improve it.
+
+⭐ Final Note
+
+If you like this project, don’t forget to give it a star ⭐
+Your support motivates me to build more awesome projects 🚀
