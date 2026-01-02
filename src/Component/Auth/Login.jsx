@@ -22,7 +22,7 @@ const Login = () => {
 
        Loginpopup(provider)
         .then(result => {
-            console.log(result);
+            // console.log(result);
             navigate(`${location.state ? location.state : '/'}`)           
         })
         .catch(error => {
@@ -38,7 +38,7 @@ const Login = () => {
       
      loginuser(email,password)
      .then(result => {
-      console.log(result);
+    //   console.log(result);
        navigate(`${location.state ? location.state : '/'}`) 
       
      }).catch(error => {

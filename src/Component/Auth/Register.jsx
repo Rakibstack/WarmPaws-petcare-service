@@ -19,7 +19,7 @@ const Register = () => {
         signinwithpopup(googleprovider)
         .then(result => {
          navigate(`${location.state ? location.state : '/'}`) 
-        console.log(result);
+        // console.log(result);
             
         }).catch(error => {
             seterror(error)

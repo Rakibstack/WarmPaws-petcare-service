@@ -6,12 +6,12 @@ const Servicedetails = () => {
     const { id } = useParams();
     const paramid = parseInt(id);
     const data = useLoaderData();
-    console.log(data, typeof paramid);
+    // console.log(data, typeof paramid);
 
     const singleitem = data.find(service => service.serviceId == paramid)
     const Handlesubmit = (e) => {
         e.preventDefault();
-        toast.success("Your Book Service is successfull")
+        toast.success("Your Book Service is successfull");
         e.target.reset();
     }
 
